@@ -318,13 +318,13 @@ Your data, pre-filled automatically:
 │                 3 PILLARS OF CONTEXT                        │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  1️⃣ ONBOARDING DATA                                        │
+│  1. ONBOARDING DATA                                         │
 │     Currency, timezone, language, industry preferences      │
 │                                                             │
-│  2️⃣ CONTEXTUAL UI HISTORY                                  │
+│  2. CONTEXTUAL UI HISTORY                                   │
 │     Remembers your last inputs for each tool                │
 │                                                             │
-│  3️⃣ CHAT INTELLIGENCE                                      │
+│  3. CHAT INTELLIGENCE                                       │
 │     Extracts entities from conversation                     │
 │     "Budget $5000" → Pre-fills budget calculators           │
 │                                                             │
@@ -347,15 +347,17 @@ Every tool supports comprehensive export:
 
 ### What wants.chat Replaces
 
+_Typical standard-tier pricing as of December 2025; actual figures vary by plan and seat count._
+
 <table>
 <tr><th>Category</th><th>Apps Replaced</th><th>Annual Savings</th></tr>
 <tr><td>AI Assistants</td><td>ChatGPT Plus, Claude Pro, Gemini Advanced</td><td>$720/year</td></tr>
-<tr><td>Design Tools</td><td>Canva Pro, Adobe Express, Figma</td><td>$480/year</td></tr>
-<tr><td>Writing Tools</td><td>Jasper, Copy.ai, Writesonic</td><td>$600/year</td></tr>
+<tr><td>Design Tools</td><td>Canva Pro, Adobe Express, Figma</td><td>$360/year</td></tr>
+<tr><td>Writing Tools</td><td>Jasper, Copy.ai, Writesonic</td><td>$1,000/year</td></tr>
 <tr><td>Project Management</td><td>Monday, Asana, Notion</td><td>$360/year</td></tr>
 <tr><td>Automation</td><td>Zapier, Make, n8n Cloud</td><td>$480/year</td></tr>
-<tr><td>App Building</td><td>Bubble, Webflow, Retool</td><td>$1,200/year</td></tr>
-<tr><td><b>TOTAL</b></td><td></td><td><b>$3,840/year saved</b></td></tr>
+<tr><td>App Building</td><td>Bubble, Webflow, Retool</td><td>$750/year</td></tr>
+<tr><td><b>TOTAL</b></td><td>18 apps</td><td><b>$3,670/year saved</b></td></tr>
 </table>
 
 ### Feature Comparison (December 2025)
@@ -428,7 +430,7 @@ Pricing is defined in [`frontend/src/config/pricing.ts`](frontend/src/config/pri
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 19** + TypeScript
+- **React 18** + TypeScript
 - **Vite** build tooling
 - **Tailwind CSS** + shadcn/ui
 - **Framer Motion** for animations
@@ -437,16 +439,16 @@ Pricing is defined in [`frontend/src/config/pricing.ts`](frontend/src/config/pri
 
 ### Backend
 - **NestJS** (Node.js framework)
-- **PostgreSQL** database
+- **PostgreSQL** database (raw `pg` driver)
 - **Qdrant** vector database (optional)
-- **Redis** for caching
+- **Redis** (via BullMQ queues)
 - **Socket.io** for real-time communication
 - **Swagger/OpenAPI** for API documentation
 
 ### Browser Extension
 - **Vite** + **TypeScript**
 - **Manifest V3** (Chrome, Edge, Firefox)
-- Shares the same React component library as the web app
+- Shares React components with the web app via source-level imports
 
 ### AI/ML
 - **OpenRouter** unified LLM gateway (30+ models)
